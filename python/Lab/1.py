@@ -10,9 +10,9 @@ res = [myList[i: j] for i, j in
         ([size] if idx_list[0] == size else []))]
 for i in res :
     count = 0
-    for k in range(len(i)-1,0,-1) :
+    for k in range(len(i)-1,0,-1) : 
         if(i[k-1] - i[k] != 1):
-            for j in range (len(i)-count-1):
+            for j in range (len(i)-count-1): 
                 i.remove(i[0])
         else:
             count += 1
