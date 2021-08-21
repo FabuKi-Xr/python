@@ -11,7 +11,7 @@ for i in myList:
 newList = []
 newList = myList.copy()
 
-newList.remove(max(set(myList),key=myList.count))
+newList.remove(max(set(myList),key=myList.count)) #ใช้ max หาค่าซ้ำสูงสุดของ mylist
 if (myList == [] or newList == []):
     print("*** No Candidate Wins ***")
 elif(newList.count(max(set(newList),key=newList.count)) == myList.count(max(set(myList),key=myList.count))):
