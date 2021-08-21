@@ -10,8 +10,7 @@ for i in myList:
         myList.remove(i)
 newList = []
 newList = myList.copy()
-
-newList.remove(max(set(myList),key=myList.count)) #ใช้ max หาค่าซ้ำสูงสุดของ mylist
+newList.remove(max(set(myList),key=myList.count)) #ใช้ max หาค่าซ้ำสูงสุดของ mylist ใช้ set เป็น dict หาค่าเเล้วนับจำนวน
 if (myList == [] or newList == []):
     print("*** No Candidate Wins ***")
 elif(newList.count(max(set(newList),key=newList.count)) == myList.count(max(set(myList),key=myList.count))):
