@@ -27,5 +27,6 @@ def mode(pureList):
         if(i[0] == 'P'):
             print(stack.popout())
     print(stack.getStack())
+    
 myInput = [e for e in input("Enter Input : ").split(',')]
 mode(myInput)
