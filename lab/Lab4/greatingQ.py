@@ -31,7 +31,7 @@ if(len(deqList) == 0):
     print("Empty",end="")
 print(*deqList,sep=', ',end="")
 print(" : ",end="")
-print(*q.queue,sep=', ',end="")
+print(*q.queue,sep=', ',end="") # เเยกลิสต์ด้วย ', ' 
 if(q.isEmpty()):
     print("Empty")
 
