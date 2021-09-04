@@ -22,7 +22,7 @@ class Queue:
                     self.queue.insert(i,item)
                     find = True
                     break
-            if not find:
+            if not find:  #found only 'ES'
                 self.enqueue(item)
 
 def PSD48(List):
