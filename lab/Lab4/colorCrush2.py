@@ -19,8 +19,6 @@ class Stack(): #bomb stack
         self.stack.append(i)
     def pop(self,i):
         return self.stack.pop(i)
-    # def index(self,i):
-    #     return self.getStack().index(i)
     def size(self):
         return len(self.stack)
     def isEmpty(self):
@@ -54,13 +52,13 @@ class Stack(): #bomb stack
                                 self.stack.insert(i+2,q.dequeue()) 
                                 item += self.stack[i+2]
                                 shouldRepeat = True
-                                if self.stack[i] in item: #ตัวโดนบวกเพิ่ม
+                                if self.stack[i] == self.stack[i+1] and \
+                                    self.stack[i] == self.stack[i+2]: #ตัวโดนบวกเพิ่ม
                                     self.failed += 1
                                     self.pop(i)
                                     self.pop(i)
                                     self.pop(i)
                             else:
-                                #print(self.stack)
                                 self.count += 1   
                                 self.pop(i)
                                 self.pop(i)
@@ -100,7 +98,6 @@ def colorCrush2(normalBomb,mirrorBomb):
         mirrorStack.push(mirrorBomb[i])
     
     for i in mirrorStack.crushBomb():
-        #print(i)
         mirrorq.enqueue(i)
 
     normalStack = Stack(": NORMAL") 
@@ -111,5 +108,6 @@ def colorCrush2(normalBomb,mirrorBomb):
     normalStack.result()
     print("------------MIRROR------------")
     mirrorStack.result()
+
 normalBomb,mirrorBomb = input("Enter Input (Normal, Mirror) : ").split()
 colorCrush2(normalBomb,mirrorBomb)
