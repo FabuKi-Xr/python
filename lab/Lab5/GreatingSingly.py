@@ -54,10 +54,10 @@ class LinkedList:
         beforeNode = any
         while i != None:
             if self.index(i.data) == pos:
-                if i.next != None:
-                    beforeNode.next = i.next
+                if  i == self.head:
+                    self.head = None   
                 else:
-                    self.head = None
+                    beforeNode.next = i.next
                 return "Success"
                 
             beforeNode = i
