@@ -41,7 +41,6 @@ def split(item):
             temp = L2
             s=""
         elif(str(item[i:i+2]) == '->'):
-            #s+=" "
             temp.append(s)
             s=""
         else:

@@ -18,11 +18,6 @@ class LinkedList:
                 t = t.next
             t.next = newNode
 
-    def addhead(self,item):
-        self.size += 1
-        newNode = Node(item)
-        newNode.next = self.head
-        self.head = newNode
     def remove(self,item):
         i = self.head
         before = self.head
@@ -90,11 +85,7 @@ class LinkedList:
                 return i.data
             before = i
             i = i.next
-    def dequeue (self):
-        self.size -= 1
-        temp = self.head.data
-        self.head = self.head.next
-        return temp
+
     def radixSort(self):
         order = self.copy()
         isStop = False
@@ -106,24 +97,24 @@ class LinkedList:
             print("Round : " + str(i))
             while node != None:
                 if self.get_digit(node.data,i) == 0:
-                    q[0].addhead(node.data)
+                    q[0].append(node.data)
                 elif self.get_digit(node.data,i) == 1:
-                    q[1].addhead(node.data)
+                    q[1].append(node.data)
                 elif self.get_digit(node.data,i) == 2:
-                    q[2].addhead(node.data)
+                    q[2].append(node.data)
                 elif self.get_digit(node.data,i) == 3:
-                    q[3].addhead(node.data)
+                    q[3].append(node.data)
                 elif self.get_digit(node.data,i) == 4:
-                    q[4].addhead(node.data)
+                    q[4].append(node.data)
                 elif self.get_digit(node.data,i) == 5:
-                    q[5].addhead(node.data)
+                    q[5].append(node.data)
                 elif self.get_digit(node.data,i) == 6:
-                    q[6].addhead(node.data)
+                    q[6].append(node.data)
                 elif self.get_digit(node.data,i) == 7:
-                    q[7].addhead(node.data)
+                    q[7].append(node.data)
                 elif self.get_digit(node.data,i) == 8:
-                    q[8].addhead(node.data)
-                else: q[9].addhead(node.data)
+                    q[8].append(node.data)
+                else: q[9].append(node.data)
                 node = node.next
             order = LinkedList()
             for j in range(len(q)):
