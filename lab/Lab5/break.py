@@ -31,12 +31,6 @@ class LinkedList():
                 pre = item
                 item = item.next
         return platebreak
-    # def __str__(self):
-    #     i, s = self.head, str(self.head.weight) + " "
-    #     while i.next != None:
-    #         s += str(i.next.weight) + " "
-    #         i = i.next
-    #     return s
 L = LinkedList()
 __input = input("Enter Input : ").split(',')
 
