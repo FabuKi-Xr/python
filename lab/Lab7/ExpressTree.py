@@ -22,21 +22,41 @@ class BST():
         self.root = None
         self.s = Stack()
 
-    def insert(self,node:Node,data):
+    def insert(self,data):
         newNode = Node(data)
         if data in '+-*/':
-            newNode.right = self.s.pop
-            newNode.left = self.s.pop
+            newNode.right = self.s.pop()
+            newNode.left = self.s.pop()
         self.s.push(newNode)
 
     def printTree(self,node:Node,level=0):
-        self.printTree(node.right, level + 1)
-        print('     ' * level, node)
-        self.printTree(node.left, level + 1)
-        
+        if node!= None:
+            self.printTree(node.right, level + 1)
+            print('     ' * level, node)
+            self.printTree(node.left, level + 1)
+    def printPre(self,node:Node):
+        if node!= None:
+            print(node,end="")
+            self.printPre(node.left)
+            self.printPre(node.right)
+    def printIn(self,node:Node):
+        if node!= None:
+            if node.right != None:
+                print('(',end="")
+            self.printIn(node.left)
+            print(node,end="")
+            self.printIn(node.right)
+            if node.left != None:
+                print(')',end="")
 T = BST()
 inp = input("Enter Postfix : ")
-for i in inp[::-1]:
+for i in inp:
     T.insert(i)
+T.root = T.s.pop()
 print("Tree : ")
 T.printTree(T.root)
+print("--------------------------------------------------")
+print("Infix : ",end="")
+T.printIn(T.root)
+print("\nPrefix : ",end="")
+T.printPre(T.root)
