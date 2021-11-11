@@ -43,7 +43,7 @@ def closestValue(root:Node,value)  -> int:
                 isFound = closestValue(root.right,value)
                 if isFound != "Found":
                     if value in range(root.data,root.right.data+1):
-                        if abs(value-root.data) <= abs(value-root.right.data) and root.data >=0:
+                        if abs(value-root.data) < abs(value-root.right.data) and root.data >=0:
                             print(f"Closest value of {value} : {root.data}")
                         else:
                             print(f"Closest value of {value} : {root.right.data}")
